@@ -1,0 +1,28 @@
+{
+    "manifest_version":2,
+    "name":"Automatic Window Opener",
+    "author":"Davide Scalise",
+    "version":"0.2",
+
+    "background":{
+        "scripts":["defaultValues.js","windowManager.js","backgroundScript.js"]
+    },
+    "browser_action":{
+        "default_popup":"guiOpener.html"
+    },
+    "permissions":["storage","tabs"],
+    "commands":{
+        "load-windows-keyboard":{
+            "suggested_key":{
+                "default":"Ctrl+Alt+K"
+            }   },
+        "save-windows-keyboard":{
+            "suggested_key":{
+                "default":"Ctrl+Alt+H"
+            }   },
+        "reset-windows-keyboard":{
+            "suggested_key":{
+                "default":"Ctrl+Alt+J"
+            }   }
+        }
+        }
