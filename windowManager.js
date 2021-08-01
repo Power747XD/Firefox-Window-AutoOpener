@@ -14,7 +14,6 @@ console.log(getWindowsData())
 async function openOrLoadPage(){
     let savedWindows = await getWindowsData()
     for (pendingWindow of savedWindows["savedWindows"]){
-        console.log(pendingWindow)
         let url = pendingWindow.createData.tabs.url
         let width = pendingWindow.updateData.width
         let height = pendingWindow.updateData.height
@@ -25,6 +24,20 @@ async function openOrLoadPage(){
     }
     }
 
-function savePage() {
-    browser.storage.local.set()
+async function savePage() {
+    let windowData=await browser.windows.getAll({populate:true,windowTypes:["popup"]})
+    let dataToStore=new Array;
+    let arrayCounter=0
+        for (pendingWindow of windowData){
+            dataToStore[arrayCounter]={"createData":{"tabs":{"url":pendingWindow.tabs[0].url}},
+        "updateData":{"width":pendingWindow.width,
+        "height":pendingWindow.height,
+        "left":pendingWindow.left,
+        "top":pendingWindow.top}}
+        arrayCounter=arrayCounter+1
+        }
+    arrayCounter=0
+    console.log(dataToStore)
+    browser.storage.local.set({"savedWindows":dataToStore})
+    
 }
