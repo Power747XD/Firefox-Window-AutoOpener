@@ -1,12 +1,12 @@
-//browser.commands.onCommand.addListener((command)=>{
-    //if (command==="load-windows-keyboard"){
-        //loadPage()
-    //}
-    //else if (command==="save-windows-keyboard"){
-        
-    //}
-    //else if (command==="reset-windows-keyboard"){
-   //     openPage()
-    //}
+browser.commands.onCommand.addListener((command)=>{
+    if (command==="reload-windows-keyboard"){
+        reloadPages()
+    }
+    else if (command==="save-windows-keyboard"){
+        savePage()
+    }
+    else if (command==="convert-windows-keyboard"){
+        addPage()
+    }
     
-//})
+})
