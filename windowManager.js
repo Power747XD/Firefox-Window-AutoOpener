@@ -4,14 +4,11 @@ async function getWindowsData(){
         browser.storage.local.set(defaultWindows)
         savedWindows = await browser.storage.local.get("savedWindows")
     }
-    if (Object.keys(savedWindows).length==0){
-        throw ReferenceError
-    }
     return savedWindows
 }
 console.log(getWindowsData())
 
-async function openOrLoadPage(){
+async function loadPage(){
     let savedWindows = await getWindowsData()
     for (pendingWindow of savedWindows["savedWindows"]){
         let url = pendingWindow.createData.tabs.url
@@ -23,6 +20,11 @@ async function openOrLoadPage(){
             browser.windows.update(w.id,{"width":width,"height":height,"left":x,"top":y})});
     }
     }
+
+async function addPage() {
+    let toBeAddedWindow = await browser.tabs.query({"windowType":"normal","active":true,"currentWindow":true})
+    console.log(toBeAddedWindow)
+}
 
 async function savePage() {
     let windowData=await browser.windows.getAll({populate:true,windowTypes:["popup"]})
@@ -37,7 +39,17 @@ async function savePage() {
         arrayCounter=arrayCounter+1
         }
     arrayCounter=0
-    console.log(dataToStore)
     browser.storage.local.set({"savedWindows":dataToStore})
-    
+}
+
+async function reloadPages(){
+    let windowData=await browser.windows.getAll({windowTypes:["popup"]})
+    for (w of windowData){
+        browser.windows.remove(w.id)
+    }
+    loadPage()
+}
+
+async function resetStorage() {
+    browser.storage.local.set(defaultWindows)
 }

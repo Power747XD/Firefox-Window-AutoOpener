@@ -1,7 +1,7 @@
-browser.commands.onCommand.addListener((command)=>{
-    if (command==="load-windows-keyboard"){
-        openOrLoadPage()
-    }
+//browser.commands.onCommand.addListener((command)=>{
+    //if (command==="load-windows-keyboard"){
+        //loadPage()
+    //}
     //else if (command==="save-windows-keyboard"){
         
     //}
@@ -9,4 +9,4 @@ browser.commands.onCommand.addListener((command)=>{
    //     openPage()
     //}
     
-})
+//})

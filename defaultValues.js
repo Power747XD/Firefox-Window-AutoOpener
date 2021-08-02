@@ -8,8 +8,8 @@ var defaultWindows={
                     "url":"http://www.youtube.com"
             }},
             "updateData":{
-                "width":100,
-                "height":100,
+                "width":300,
+                "height":200,
                 "left":100,
                 "top":100
             }
@@ -21,10 +21,10 @@ var defaultWindows={
                 }
             },
             "updateData":{
-                "width":100,
+                "width":300,
                 "height":100,
-                "left":100,
-                "top":100
+                "left":500,
+                "top":200
             }
         }
         ]}

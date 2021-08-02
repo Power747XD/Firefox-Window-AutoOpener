@@ -1,7 +1,11 @@
 var loadButton=document.getElementById("load-button")
+var reloadButton=document.getElementById("reload-button")
+var convertButton=document.getElementById("convert-button")
 var saveButton=document.getElementById("save-button")
 var resetButton=document.getElementById("reset-button")
 
-loadButton.addEventListener("click",openOrLoadPage)
+loadButton.addEventListener("click",loadPage)
+reloadButton.addEventListener("click",reloadPages)
+convertButton.addEventListener("click",addPage)
 saveButton.addEventListener("click",savePage)
-//resetButton.addEventListener("click",  )
+resetButton.addEventListener("click",resetStorage)
