@@ -22,8 +22,12 @@ async function loadPage(){
     }
 
 async function addPage() {
-    let toBeAddedWindow = await browser.tabs.query({"windowType":"normal","active":true,"currentWindow":true})
-    console.log(toBeAddedWindow)
+    let toBeAddedWindow = await browser.tabs.query({"active":true,"currentWindow":true})
+    if (toBeAddedWindow.length==1){
+        browser.windows.create({"type":"popup","url":toBeAddedWindow[0].url,"width":400,"height":400})
+    } else {
+        console.log("An error occurred while trying to convert this page into a popup.")
+    }
 }
 
 async function savePage() {
