@@ -1,3 +1,6 @@
+browser.runtime.onStartup.addListener(loadPage)
+browser.runtime.onInstalled.addListener(loadPage)
+
 browser.commands.onCommand.addListener((command)=>{
     if (command==="reload-windows-keyboard"){
         reloadPages()

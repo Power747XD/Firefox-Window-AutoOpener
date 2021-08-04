@@ -1,31 +1,7 @@
 //These are the default values that get loaded when no stored windows are found 
+//Inserting "savedWindows":[] in the object is also good, as long as the key "savedWindows" exists. I don't like having default windows either.
 
 var defaultWindows={
-    "savedWindows":
-        [{
-            "createData":{
-                "tabs":{
-                    "url":"http://www.youtube.com"
-            }},
-            "updateData":{
-                "width":300,
-                "height":200,
-                "left":100,
-                "top":100
-            }
-        },
-        {
-            "createData":{
-                "tabs":{
-                    "url":"http://www.google.com"
-                }
-            },
-            "updateData":{
-                "width":300,
-                "height":100,
-                "left":500,
-                "top":200
-            }
-        }
-        ]}
+    "savedWindows": []
+};
 
