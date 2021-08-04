@@ -3,5 +3,4 @@
 
 var defaultWindows={
     "savedWindows": []
-};
-
+}
