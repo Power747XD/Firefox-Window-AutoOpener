@@ -11,3 +11,23 @@ browser.commands.onCommand.addListener((command)=>{
         addPage()
     }
 })
+
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    switch (message.action) {
+        case "loadPage":
+            loadPage()
+            break
+        case "addPage":
+            addPage()
+            break
+        case "savePage":
+            savePage()
+            break
+        case "reloadPages":
+            reloadPages()
+            break
+        case "resetStorage":
+            resetStorage()
+            break
+    }
+})

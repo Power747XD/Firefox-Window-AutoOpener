@@ -12,7 +12,8 @@ async function loadPage(){
         let x = pendingWindow.updateData.left
         let y = pendingWindow.updateData.top
         let w = await browser.windows.create({"type":"popup","url":url})
-        await browser.windows.update(w.id,{"width":width,"height":height,"left":x,"top":y})
+        await browser.windows.update(w.id,{"width":width,"height":height})
+        await browser.windows.update(w.id,{"left":x,"top":y})
     }
 }
 
