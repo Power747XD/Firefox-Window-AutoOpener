@@ -5,7 +5,7 @@
     "version":"0.2",
 
     "background":{
-        "scripts":["defaultValues.js","windowManager.js","backgroundScript.js"]
+        "scripts":["browser-polyfill.js","defaultValues.js","windowManager.js","backgroundScript.js"]
     },
     "browser_action":{
         "default_popup":"guiOpener.html"
@@ -14,15 +14,21 @@
     "commands":{
         "reload-windows-keyboard":{
             "suggested_key":{
-                "default":"Ctrl+Alt+U"
-            }   },
+                "default":"Ctrl+Shift+J"
+            },
+            "description": "Reload popup windows"
+        },
         "save-windows-keyboard":{
             "suggested_key":{
-                "default":"Ctrl+Alt+I"
-            }   },
+                "default":"Ctrl+Shift+K"
+            },
+            "description": "Save popup windows"
+        },
         "convert-windows-keyboard":{
             "suggested_key":{
-                "default":"Ctrl+Alt+O"
-            }   }
+                "default":"Ctrl+Shift+L"
+            },
+            "description": "Convert to popup window"
         }
-        }
+    }
+}
