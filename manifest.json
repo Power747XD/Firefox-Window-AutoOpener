@@ -14,19 +14,19 @@
     "commands":{
         "reload-windows-keyboard":{
             "suggested_key":{
-                "default":"Ctrl+Shift+J"
+                "default":"Ctrl+Shift+1"
             },
             "description": "Reload popup windows"
         },
         "save-windows-keyboard":{
             "suggested_key":{
-                "default":"Ctrl+Shift+K"
+                "default":"Ctrl+Shift+2"
             },
             "description": "Save popup windows"
         },
         "convert-windows-keyboard":{
             "suggested_key":{
-                "default":"Ctrl+Shift+L"
+                "default":"Ctrl+Shift+3"
             },
             "description": "Convert to popup window"
         }
