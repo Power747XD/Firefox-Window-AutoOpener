@@ -49,7 +49,7 @@ async function savePage() {
 async function reloadPages(){
     let windowData=await browser.windows.getAll({windowTypes:["popup"]})
     for (w of windowData){
-        browser.windows.remove(w.id)
+        await browser.windows.remove(w.id)
     }
     loadPage()
 }
