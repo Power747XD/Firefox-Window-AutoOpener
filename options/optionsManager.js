@@ -10,3 +10,11 @@ async function saveSettings(){
 }
 
 document.getElementById("save-changes").addEventListener("click", saveSettings)
+
+async function loadSettings() {
+    let { settings } = await browser.storage.local.get({settings: {x_offset: 0, y_offset: 0}})
+    document.getElementById("x-offset").value = settings.x_offset
+    document.getElementById("y-offset").value = settings.y_offset
+}
+
+loadSettings()
