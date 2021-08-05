@@ -5,10 +5,8 @@ async function saveSettings(){
         "x_offset":x_offset,
         "y_offset":y_offset
     }
-    console.log(settingsToLoad)
     await browser.storage.local.set({"settings":settingsToLoad})
 }
-
 document.getElementById("save-changes").addEventListener("click", saveSettings)
 
 async function loadSettings() {
@@ -16,5 +14,4 @@ async function loadSettings() {
     document.getElementById("x-offset").value = settings.x_offset
     document.getElementById("y-offset").value = settings.y_offset
 }
-
 loadSettings()
