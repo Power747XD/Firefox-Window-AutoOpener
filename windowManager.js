@@ -1,10 +1,16 @@
+async function getSettings(){
+    let data = await browser.storage.local.get(defaultValues)
+    return data["settings"]
+}
+
 async function getWindowsData(){
-    let data = await browser.storage.local.get(defaultWindows)
+    let data = await browser.storage.local.get(defaultValues)
     return data["savedWindows"]
 }
 
 async function loadPage(){
     let savedWindows = await getWindowsData()
+    let settings = await getSettings()
     for (let pendingWindow of savedWindows){
         let url = pendingWindow.createData.tabs.url
         let width = pendingWindow.updateData.width
@@ -13,7 +19,7 @@ async function loadPage(){
         let y = pendingWindow.updateData.top
         let w = await browser.windows.create({"type":"popup","url":url})
         await browser.windows.update(w.id,{"width":width,"height":height})
-        await browser.windows.update(w.id,{"left":x,"top":y})
+        await browser.windows.update(w.id,{"left":x + settings.x_offset,"top":y + settings.y_offset})
     }
 }
 
@@ -56,5 +62,5 @@ async function reloadPages(){
 }
 
 async function resetStorage() {
-    await browser.storage.local.set(defaultWindows)
+    await browser.storage.local.set(defaultValues)
 }
