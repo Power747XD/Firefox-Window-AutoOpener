@@ -31,3 +31,10 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
             break
     }
 })
+
+browser.contextMenus.create({id:"current-to-popup",title:"Convert this page into a popup",contexts:["all"]})
+browser.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId=="current-to-popup"){
+        addPage()
+    }
+})

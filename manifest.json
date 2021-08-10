@@ -10,6 +10,7 @@
     "browser_action":{
         "default_popup":"guiOpener.html"
     },
+    "permissions":["storage","tabs","contextMenus"],
     "commands":{
         "reload-windows-keyboard":{
             "suggested_key":{
