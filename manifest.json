@@ -10,7 +10,6 @@
     "browser_action":{
         "default_popup":"guiOpener.html"
     },
-    "permissions":["storage","tabs"],
     "commands":{
         "reload-windows-keyboard":{
             "suggested_key":{
@@ -35,5 +34,8 @@
         "page":"options/options.html",
         "chrome_style": true,
         "browser_style": true
+    },
+    "icons":{
+        "64":"Logo64.png"
     }
 }
