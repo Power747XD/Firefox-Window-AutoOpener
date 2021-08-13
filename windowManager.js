@@ -17,8 +17,10 @@ async function loadPage(){
         let height = pendingWindow.updateData.height
         let x = pendingWindow.updateData.left
         let y = pendingWindow.updateData.top
+        let zoom = pendingWindow.updateData.zoom
         let w = await browser.windows.create({"type":"popup","url":url})
         await browser.windows.update(w.id,{"width":width,"height":height, "left":x + settings.x_offset,"top":y + settings.y_offset})
+        await browser.tabs.setZoomSettings(w.tabs[0].id,{"defaultZoomFactor":zoom})
     }
 }
 
@@ -44,7 +46,8 @@ async function savePage() {
                 "width":pendingWindow.width,
                 "height":pendingWindow.height,
                 "left":pendingWindow.left,
-                "top":pendingWindow.top
+                "top":pendingWindow.top,
+                "zoom":pendingWindow.tabs[0].ZoomSettings
             }
         })
     }
