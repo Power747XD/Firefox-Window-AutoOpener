@@ -2,7 +2,7 @@
     "manifest_version":2,
     "name":"Automatic Window Opener",
     "author":"Davide Scalise",
-    "version":"0.2",
+    "version":"0.3",
 
     "background":{
         "scripts":["browser-polyfill.js","defaultValues.js","windowManager.js","backgroundScript.js"]
